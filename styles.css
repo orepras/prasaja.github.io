@@ -1,0 +1,268 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #000;
+  padding: 20px;
+}
+
+.crt-text {
+  /* Base text style */
+  color: #fff;
+  font-family: monospace; /* or any retro-style font */
+  text-wrap: balance;
+
+  /* Multi-layered text shadow for the glow effect */
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.7),
+    /* White inner glow */ 0 0 10px rgba(255, 0, 255, 0.5),
+    /* Magenta glow */ 0 0 15px rgba(0, 255, 255, 0.5),
+    /* Cyan glow */ 2px 2px 2px rgba(0, 0, 0, 0.5); /* Subtle offset shadow */
+
+  /* Optional: Add slight chromatic aberration effect */
+  position: relative;
+}
+
+/* Optional: Add RGB split effect */
+.crt-text::before,
+.crt-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.3;
+}
+
+.crt-text::before {
+  color: #ff00ff; /* Magenta */
+  transform: translate(-2px, 0);
+}
+
+.crt-text::after {
+  color: #b2ac88; /* Cyan */
+  transform: translate(2px, 0);
+}
+
+.crt-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.crt-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(transparent 50%, rgba(0, 0, 0, 0.1) 50%);
+  background-size: 100% 4px;
+  pointer-events: none;
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 0.9;
+  }
+  5% {
+    opacity: 0.8;
+  }
+  10% {
+    opacity: 0.9;
+  }
+  15% {
+    opacity: 0.85;
+  }
+  20% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0.9;
+  }
+}
+
+.crt-text {
+  animation: flicker 0.3s infinite;
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 0.9;
+  }
+  5% {
+    opacity: 0.8;
+  }
+  10% {
+    opacity: 0.9;
+  }
+  15% {
+    opacity: 0.85;
+  }
+  20% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0.9;
+  }
+}
+
+.crt-text {
+  animation: flicker 0.3s infinite;
+}
+
+.crt-text {
+  filter: blur(0.3px);
+}
+
+/* Container styles */
+.crt-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #000;
+  gap: 2rem;
+  padding: 20px;
+}
+
+/* CRT text styles */
+.crt-text {
+  color: #fff;
+  font-family: monospace;
+  text-align: center;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.7), 0 0 10px rgba(255, 0, 255, 0.5),
+    0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+/* Form styles */
+.crt-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Input styles */
+.crt-input {
+  background: #000;
+  border: 2px solid #00ff00;
+  color: #00ff00;
+  font-family: monospace;
+  padding: 10px;
+  outline: none;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+  transition: all 0.3s ease;
+}
+
+.crt-input:focus {
+  border-color: #00ffff;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+  color: #00ffff;
+}
+
+/* Button styles */
+.crt-button {
+  background: transparent;
+  border: 2px solid #00ff00;
+  color: #00ff00;
+  font-family: monospace;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  overflow: hidden;
+}
+
+.crt-button:hover {
+  background: #00ff00;
+  color: #000;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.5), 0 0 20px rgba(0, 255, 0, 0.3),
+    0 0 30px rgba(0, 255, 0, 0.1);
+}
+
+/* Optional: Add scan line effect */
+.scan-lines {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(transparent 50%, rgba(0, 0, 0, 0.1) 50%);
+  background-size: 100% 4px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.crt-button:active {
+  transform: scale(0.98);
+  box-shadow: 0 0 5px rgba(0, 255, 0, 0.5), 0 0 10px rgba(0, 255, 0, 0.3);
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.crt-input:focus::after {
+  content: "|";
+  animation: blink 1s infinite;
+}
+
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+.crt-form.submitting {
+  animation: glitch 0.3s ease;
+}
+
+/* Social icons container */
+.social-links {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* Individual icon styles */
+.social-icon {
+  color: #fff; /* Base color */
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+  /* CRT glow effect matching the text */
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.7), 0 0 10px rgba(255, 0, 255, 0.5),
+    0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+.social-icon:hover {
+  transform: translateY(-2px);
+  /* Increase glow on hover */
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.9), 0 0 15px rgba(255, 0, 255, 0.7),
+    0 0 20px rgba(0, 255, 255, 0.7);
+}
