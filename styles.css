@@ -1,3 +1,8 @@
+h1,
+p {
+  max-width: 800px;
+}
+
 .container {
   display: flex;
   flex-direction: column;
