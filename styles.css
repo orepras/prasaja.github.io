@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 h1,
 p {
   max-width: 800px;
@@ -9,7 +15,7 @@ p {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: #000;
+  background-color: #1c1c1c;
   padding: 20px;
 }
 
